@@ -8,4 +8,4 @@ streamlit-option-menu==0.3.2
 plotly==5.12.0
 numpy==1.24.1
 scikit-learn==1.2.2
-tensorflow==2.12.0
+TensorFlow==2.12.0
