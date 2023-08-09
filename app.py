@@ -28,7 +28,7 @@ from tensorflow import keras
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, LSTM, Dropout, RepeatVector, TimeDistributed
 
-
+trafic_data=pd.read_parquet("https://f005.backblazeb2.com/file/trafficfares/traffic_data.parquet")
 st.set_page_config(page_title="Fares Ghezal thesis", page_icon="https://math.bme.hu/~marcessz/img/bme_favicon.ico", layout="wide")
 
 def hide_anchor_link():
@@ -64,7 +64,6 @@ def page1():
     icons=["speedometer", "car-front-fill"], 
     orientation="horizontal",
   )
-  trafic_data=pd.read_parquet("https://f005.backblazeb2.com/file/trafficfares/traffic_data.parquet")
   incident=pd.read_csv("accident2.csv")
   if selected2 == "traffic data":
     trafic_data["timestamp"] = pd.to_datetime(trafic_data["timestamp"])
@@ -281,8 +280,6 @@ def page2():
   st.markdown('Sadly, Numenta htm model can not be implemented as it is not available as a pip package and including the whole repository is not cost efficient ')
   col001, col002  = st.columns(2)
   col01, col02  = st.columns(2)
-  
-  trafic_data=pd.read_parquet("https://f005.backblazeb2.com/file/trafficfares/traffic_data.parquet")
   incident=pd.read_csv("accident2.csv")
   uploaded_file = col001.file_uploader("upload traffic data",type=["csv"])
   if uploaded_file is not None:
