@@ -64,7 +64,7 @@ def page1():
     icons=["speedometer", "car-front-fill"], 
     orientation="horizontal",
   )
-  trafic_data=pd.read_parquet("traffic_data.parquet")
+  trafic_data=pd.read_parquet("https://f005.backblazeb2.com/file/trafficfares/traffic_data.parquet")
   incident=pd.read_csv("accident2.csv")
   if selected2 == "traffic data":
     trafic_data["timestamp"] = pd.to_datetime(trafic_data["timestamp"])
@@ -282,7 +282,7 @@ def page2():
   col001, col002  = st.columns(2)
   col01, col02  = st.columns(2)
   
-  trafic_data=pd.read_parquet("traffic_data.parquet")
+  trafic_data=pd.read_parquet("https://f005.backblazeb2.com/file/trafficfares/traffic_data.parquet")
   incident=pd.read_csv("accident2.csv")
   uploaded_file = col001.file_uploader("upload traffic data",type=["csv"])
   if uploaded_file is not None:
