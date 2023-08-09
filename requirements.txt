@@ -11,3 +11,4 @@ scikit-learn==1.2.2
 TensorFlow==2.12.0
 xgboost==1.7.6
 Optuna
+pyarrow
